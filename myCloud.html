@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myCloud.css">
+    <title>My Cloud</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="menu">
+                <div class="profile-section">
+                    <img src="Images/profile.jpg" alt="Profile Picture" class="profile-pic">
+                </div>
+                <a href="#" class="active"><img src="Images/myCloud.svg" alt=""> My cloud</a>
+                <a href="sharedFiles.html"><img src="Images/sharedFiles.svg" alt=""> Shared files</a>
+                <a href="favorites.html"><img src="Images/star.svg" alt=""> Favorites</a>
+                <a href="./uploadFiles.html"><img src="Images/uploadFiles.svg" alt=""> Upload files</a>
+            </nav>
+            <div class="settings-logout">
+                <a href="#"><img src="Images/settings.svg" alt=""> Settings</a>
+                <a href="#"><img src="Images/logOut.svg" alt=""> Log out</a>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="top-bar">
+                <input type="text" placeholder="Search" class="search-bar">
+            </div>
+
+            <section class="categories">
+                <div class="card pictures">
+                    <img src="Images/camera.svg" alt=""/>
+                    Pictures <span>480 files</span>
+                </div>
+                <div class="card documents">
+                    <img src="Images/document.svg" alt=""/>
+                    Documents <span>190 files</span>
+                </div>
+                <div class="card videos">
+                    <img src="Images/video.svg" alt=""/>
+                    Videos <span>190 files</span>
+                </div>
+                <div class="card audio">
+                    <img src="Images/audio.svg" alt=""/>
+                    Audio <span>190 files</span>
+                </div>
+            </section>
+
+            <section class="file-groups">
+                <div class="group">
+                    <img src="Images/work.svg" alt="">
+                    Work <span>820 files</span>
+                </div>
+                <div class="group">
+                    <img src="Images/personal.svg" alt="">
+                    Personal <span>115 files</span>
+                </div>
+                <div class="group">
+                    <img src="Images/school.svg" alt="">
+                    School <span>65 files</span>
+                </div>
+                <div class="group">
+                    <img src="Images/archive.svg" alt="">
+                    Archive <span>21 files</span>
+                </div>
+                <div class="group add">+</div>
+            </section>
+
+            <section class="recent-files">
+                <h3>Recent files</h3>
+                <div class="file-item">
+                    <div class="file-icon bg-purple">
+                        <img src="Images/camera2.svg" alt="" />
+                    </div>
+                    <div class="file-details">
+                        <strong>IMG_100000</strong>
+                        <span>PNG file • 5 MB</span>
+                    </div>
+                    <div class="file-actions">
+                        <img src="Images/share.svg" alt="Share">
+                        <img src="Images/menu.svg" alt="Menu">
+                    </div>
+                </div>
+
+                <div class="file-item">
+                    <div class="file-icon bg-pink">
+                        <img src="Images/video2.svg" alt="video" />
+                    </div>
+                    <div class="file-details">
+                        <strong>Startup pitch</strong>
+                        <span>AVI file • 105 MB</span>
+                    </div>
+                    <div class="file-actions">
+                        <img src="Images/share.svg" alt="Share">
+                        <img src="Images/menu.svg" alt="Menu">
+                    </div>
+                </div>
+
+                <div class="file-item">
+                    <div class="file-icon bg-blue">
+                        <img src="Images/mic.svg" alt="mic" />
+                    </div>
+                    <div class="file-details">
+                        <strong>Freestyle beat</strong>
+                        <span>MP3 file • 21 MB</span>
+                    </div>
+                    <div class="file-actions">
+                        <img src="Images/share.svg" alt="Share">
+                        <img src="Images/menu.svg" alt="Menu">
+                    </div>
+                </div>
+
+                <div class="file-item">
+                    <div class="file-icon bg-teal">
+                        <img src="Images/document2.svg" alt="doc" />
+                    </div>
+                    <div class="file-details">
+                        <strong>Work proposal</strong>
+                        <span>DOCx file • 500 kb</span>
+                    </div>
+                    <div class="file-actions">
+                        <img src="Images/share.svg" alt="Share">
+                        <img src="Images/menu.svg" alt="Menu">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="right-panel">
+            <div class="upload-box">
+                <input type="file" id="file-upload" multiple hidden>
+                <p>Add new files</p>
+                <p>Click to browse files</p>
+            </div>
+
+            <div class="storage">
+                <p>Your storage <span>25% left</span></p>
+                <progress value="75" max="100"></progress>
+                <p>75 GB of 100 GB are used</p>
+            </div>
+
+            <div class="shared-folders">
+                <p>Your shared folders</p>
+                <div class="folder">Keynote files</div>
+                <div class="folder">Vacation photos</div>
+                <div class="folder">Project report</div>
+                <div class="folder add">+ Add more</div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        document.querySelector('.upload-box').addEventListener('click', function() {
+            document.getElementById('file-upload').click();
+        });
+
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                console.log('Selected files:', e.target.files);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f1f7ff;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    background: #012a72;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu a,
+.settings-logout a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu a:hover,
+.settings-logout a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu a.active {
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+}
+
+.menu a img,
+.settings-logout a img {
+    width: 20px;
+    height: 20px;
+}
+
+.main {
+    flex: 1;
+    padding: 40px;
+    background: #eaf2ff;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar:focus {
+    border-color: #2c5ee2;
+    box-shadow: 0 4px 12px rgba(44, 94, 226, 0.1);
+}
+
+.shared-section {
+    margin-bottom: 50px;
+}
+
+.shared-section h2,
+.recent-shared h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.shared-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.shared-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.shared-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.shared-users {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.shared-users img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -12px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shared-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.shared-card span {
+    color: #666;
+    font-size: 14px;
+}
+
+.card-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.blue-line {
+    background: #2c5ee2;
+}
+
+.pink-line {
+    background: #f383a2;
+}
+
+.purple-line {
+    background: #b4b0f7;
+}
+
+.teal-line {
+    background: #17cfc4;
+}
+
+.add-shared {
+    background: #f5f9ff;
+    border: 2px dashed #2c5ee2;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2c5ee2;
+    font-size: 28px;
+    font-weight: 300;
+    min-height: 160px;
+}
+
+.add-shared:hover {
+    background: rgba(44, 94, 226, 0.05);
+    transform: translateY(-3px);
+}
+
+.shared-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shared-file-item {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.shared-file-item:hover {
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.file-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-icon img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.bg-blue {
+    background: #2c5ee2;
+}
+
+.bg-pink {
+    background: #f383a2;
+}
+
+.bg-purple {
+    background: #b4b0f7;
+}
+
+.bg-teal {
+    background: #17cfc4;
+}
+
+.file-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-info h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.file-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.file-meta .shared-users {
+    margin-bottom: 0;
+}
+
+.file-meta .shared-users img {
+    width: 28px;
+    height: 28px;
+    margin-right: -8px;
+}
+
+.file-type,
+.file-size {
+    color: #666;
+    font-size: 14px;
+}
+
+.file-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn,
+.more-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover,
+.more-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.share-btn img,
+.more-btn img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.share-btn:hover img,
+.more-btn:hover img {
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .menu {
+        margin-top: 20px;
+    }
+
+    .settings-logout {
+        margin-top: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .shared-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .file-meta {
+        flex-wrap: wrap;
+    }
+
+    .main {
+        padding: 20px;
+    }
+}
